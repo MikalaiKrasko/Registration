@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Registration.Logic\Registration.Logic.csproj" />
+    <ProjectReference Include="..\Registration.ViewModels\Registration.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

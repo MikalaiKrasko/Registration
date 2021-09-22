@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Registration.Logic;
+using Registration.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,8 @@ namespace Registration.Web.Controllers
         // GET: CompanyController
         public ActionResult Index()
         {
-            return View();
+            var companies = _companyService.GetCompanies();
+            return View(companies);
         }
 
         // GET: CompanyController/Details/5
@@ -38,10 +40,11 @@ namespace Registration.Web.Controllers
         // POST: CompanyController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(CompanyViewModel model)
         {
             try
             {
+                _companyService.Create(model);
                 return RedirectToAction(nameof(Index));
             }
             catch

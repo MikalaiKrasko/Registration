@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Registration.Data\Registration.Data.csproj" />
+    <ProjectReference Include="..\Registration.ViewModels\Registration.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>
